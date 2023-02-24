@@ -8,18 +8,34 @@
 </head>
 
 <body>
-    <h1>This is the main heading</h1>
-    <h3>Subheading</h3>
-    <p>paragraph</p>
-    <a href="hyperlink">hyperlink</a>
-    <img src="image.tag" alt="image tag">
-    <ol>
-        <li>ordered List</li>
-    </ol>
-    <ul>
-        <li>Unordered Lists</li>
-    </ul>
-
+    <table id="mainTable">
+        <tr>
+            <th>Company</th>
+            <th>Contact</th>
+            <th>Country</th>
+        </tr>
+        <tr>
+            <td>Alfreds Futterkiste</td>
+            <td>Maria Anders</td>
+            <td>Germany</td>
+        </tr>
+        <tr>
+            <td>Centro comercial Moctezuma</td>
+            <td>Francisco Chang</td>
+            <td>Mexico</td>
+        </tr>
+    </table>
+    <button onclick="addRow()" id="addrow" value="Add Row"></button>
 </body>
+<script>
+    function addRow() {
+        var tb = document.getElementById("mainTable");
+        var company = prompt("Enter company name");
+        var contact = prompt("Enter company contact");
+        var country = prompt("Enter company country");
+
+        tb.innerHTML = tb.innerHTML + `<td>${company}</td>\n\t\t\t<td>${contact}</td>\n\t\t\t<td>${country}</td>`;
+    }
+</script>
 
 </html>
